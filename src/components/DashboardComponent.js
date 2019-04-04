@@ -8,7 +8,8 @@ class DashboardComponent extends Component {
     let username = '';
     this.state = {users: [
       'Robin','Lundin','Rajib','Hossain','Khan'
-      ]
+    ],
+    color: 'green'
     };
   }
 
@@ -22,16 +23,18 @@ class DashboardComponent extends Component {
   removeUser = (e) => {
     this.setState(prevState => prevState.users.pop());
   }
+  toggleColor = (e) => {
+    this.setState({color: (this.state.color === 'green') ? 'red' : 'green'});
+  }
 
   render () {
     return (
       <div>
-        <UserComponent users={this.state.users}/>
-
+        <UserComponent users={this.state.users} textColor={this.state.color} toggleTextColor={this.toggleColor}/>
         <div className="card-two">
-        <input className="form-control" type="text" onChange={this.handleInput}/> <br/> <br/>
-        <button type="button" className="btn btn-success" onClick={this.addUser}>Add</button>  <br/> <br/>
-        <button type="button" className="btn btn-danger" onClick={this.removeUser}>Remove</button>
+          <input className="form-control" type="text" onChange={this.handleInput}/> <br/>
+          <button type="button" className="btn btn-success btn-block" onClick={this.addUser}>Add</button>  <br/>
+          <button type="button" className="btn btn-danger btn-block" onClick={this.removeUser}>Remove</button>
         </div>
       </div>
     );

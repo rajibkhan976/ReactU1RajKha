@@ -11,12 +11,12 @@ class UserComponent extends Component {
     console.log(typeof users);
     return (
       <div className="card-one">
-        <ul>
+        <ul className="list-group">
           {users.map((user, key) =>
-            <li key={key}>{user}</li>
+            <li className="list-group-item" style={{color: this.props.textColor}} key={key}>{user}</li>
           )}
+            <button type="button" className="btn btn-primary" onClick={this.props.toggleTextColor}>Toggle Colors</button>
         </ul>
-        <button type="button" className="btn btn-primary" onClick={this.toggleColor}>Toggle Colors</button>
       </div>
     );
   }
