@@ -12,3 +12,32 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.card-one {
+  min-width: 25%;
+  min-height: 70%;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 2%;
+  box-shadow: 2px 2px 2px 2px;
+  position: absolute;
+  top: 20%;
+  left: 15%;
+}
+.card-two {
+  min-width: 25%;
+  min-height: 70%;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 2%;
+  box-shadow: 2px 2px 2px 2px;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+}
+
+.content-button {
+  position: absolute;
+  top: 80%;
+  left: 30%;
+}

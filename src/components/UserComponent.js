@@ -7,9 +7,16 @@ class UserComponent extends Component {
   }
 
   render () {
+    const users = this.props.users;
+    console.log(typeof users);
     return (
-      <div className="col-12">
-        <h3>User Component</h3>
+      <div className="card-one">
+        <ul>
+          {users.map((user, key) =>
+            <li key={key}>{user}</li>
+          )}
+        </ul>
+        <button type="button" className="btn btn-primary" onClick={this.toggleColor}>Toggle Colors</button>
       </div>
     );
   }
