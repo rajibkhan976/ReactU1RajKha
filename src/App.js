@@ -8,7 +8,7 @@ import WrapperComponent from './components/WrapperComponent';
 class App extends Component {
   render() {
     return (
-            <DashboardComponent/>
+        <DashboardComponent/>
     );
   }
 }
