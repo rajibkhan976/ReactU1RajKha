@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
+/* UserComponent shows the user list and also toggle the text color based on the props it received from the DashboardComponent*/
 class UserComponent extends Component {
 
   constructor (props) {
     super(props);
   }
-
+  //rendering the userlist and toggling the textColor
   render () {
     const users = this.props.users;
-    console.log(typeof users);
     return (
         <ul className="list-group">
           {users.map((user, key) =>
