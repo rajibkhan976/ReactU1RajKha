@@ -8,29 +8,29 @@ class WrapperComponent extends Component {
   constructor (props) {
     super(props);
     //definition of two states
-    this.state = {showLeftContent: true, showRightContent: true};
+    this.state = {showContentLeft: true, showContentRight: true};
   }
   // method for controlling the display of left div contents
-  toggleLeftContent = (e) => {
-    this.setState({showLeftContent: !this.state.showLeftContent});
+  toggleShowContentLeft = (e) => {
+    this.setState({showContentLeft: !this.state.showContentLeft});
   }
   // method for controlling the display of right div contents
-  toggleRightContent = (e) => {
-    this.setState({showRightContent: !this.state.showRightContent});
+  toggleShowContentRight = (e) => {
+    this.setState({showContentRight: !this.state.showContentRight});
   }
   //rendering the contents received from DashboardComponent as props and controlling the dispaly based on the state and events
    render () {
        return (
          <Fragment>
           <div className={styles.cardOne}>
-            {this.state.showLeftContent ? this.props.left : null}
+            {this.state.showContentLeft ? this.props.left : null}
             <hr/> <br/>
-            <button type="button" className="btn btn-info" onClick={this.toggleLeftContent}>Show Content</button>
+            <button type="button" className="btn btn-info" onClick={this.toggleShowContentLeft}>Show Content</button>
           </div>
           <div className={styles.cardTwo}>
-            {this.state.showRightContent ? this.props.right : null}
-            <hr/> <br/>
-            <button type="button" className="btn btn-info" onClick={this.toggleRightContent}>Show Content</button>
+          {this.state.showContentRight ? this.props.children : null}
+          <hr/> <br/>
+          <button type="button" className="btn btn-info" onClick={this.toggleShowContentRight}>Show Content</button>
           </div>
          </Fragment>
        );
